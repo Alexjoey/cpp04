@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amylle <alexm@live.be>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 11:32:29 by amylle            #+#    #+#             */
-/*   Updated: 2024/12/02 14:12:51 by amylle           ###   ########.fr       */
+/*   Created: 2024/12/02 14:19:39 by amylle            #+#    #+#             */
+/*   Updated: 2024/12/02 14:20:12 by amylle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/Dog.hpp"
 
-Animal::Animal()
+Dog::Dog(): _type("Dog")
 {
-	std::cout << "Animal default constructor called.\n";
+	Animal::_type = "Dog";
+	std::cout << "Dog default constructor called.\n";
 }
 
 
-Animal::Animal(const Animal& src)
+Dog::Dog(const Dog& src): Animal(src)
 {
 	operator=(src);
-	std::cout << "Animal copy constructor called.\n";
+	std::cout << "Dog copy constructor called.\n";
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	std::cout << "Animal destructor called.\n";
+	std::cout << "Dog destructor called.\n";
 }
 
-Animal& Animal::operator= (const Animal& src)
+Dog& Dog::operator= (const Dog& src)
 {
 	this->_type = src._type;
 	return (*this);
-	std::cout << "Animal copy operator called.\n";
+	std::cout << "Dog copy operator called.\n";
 }
 
-void	Animal::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "Generic animal sound.\n";
+	std::cout << "Woof\n";
 }
 
-std::string	Animal::getType() const
+std::string	Dog::getType() const
 {
 	return (this->_type);
 }
