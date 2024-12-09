@@ -23,7 +23,7 @@ int	main(void)
 	delete j;//should not create a leak
 	delete c;
 
-	std::cout << "array test:\n";
+	std::cout << "\n\narray test:\n";
 	Animal	*Animals[4];
 	int	i = 0;
 
@@ -35,14 +35,24 @@ int	main(void)
 	while (i < 4)
 		delete Animals[i++];
 
-	std::cout << "deep/shallow copy test:\n";
+	std::cout << "\ncat deep/shallow copy test:\n";
 	Cat	ben;
 	Cat	yom;
 	yom = ben;
-	std::cout << "ben is copied from  yom";
+	std::cout << "ben is copied from  yom\n";
 	std::cout << "ben's idea[1] is: " << ben.getIdea(1) << ".\n";
 	std::cout << "yom's idea[1] is: " << yom.getIdea(1) << ".\n";
 	yom.setIdea(1, "hohoho");
 	std::cout << "ben's idea[1] is: " << ben.getIdea(1) << ".\n";
 	std::cout << "yom's idea[1] is: " << yom.getIdea(1) << ".\n";
+	std::cout << "\ndog deep/shallow copy test:\n";
+	Dog	ven;
+	Dog	tom;
+	tom = ven;
+	std::cout << "tom is copied from  ven\n";
+	std::cout << "ven's idea[1] is: " << ven.getIdea(1) << ".\n";
+	std::cout << "tom's idea[1] is: " << tom.getIdea(1) << ".\n";
+	tom.setIdea(1, "hohoho");
+	std::cout << "ven's idea[1] is: " << ven.getIdea(1) << ".\n";
+	std::cout << "tom's idea[1] is: " << tom.getIdea(1) << ".\n";
 }

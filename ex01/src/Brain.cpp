@@ -37,3 +37,22 @@ Brain& Brain::operator= (const Brain& src)
 	std::cout << "Brain copy operator called.\n";
 	return (*this);
 }
+
+
+void	Brain::setIdea(int n, const std::string& thought)
+{
+	if (n < 100 && n >= 0)
+		this->ideas[n] = thought;
+	else
+		std::cout << "please input a valid number into brain::setIdea";
+}
+
+std::string	Brain::getIdea(int n) const
+{
+	if (n < 100)
+		return (this->ideas[n]);
+	else
+		std::cout << "please input a number between 0 and 99.\n";
+	return (NULL);
+}
+

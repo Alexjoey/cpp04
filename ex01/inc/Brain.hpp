@@ -15,11 +15,16 @@
 
 class	Brain
 {
-public:
+
+protected:
 	std::string	ideas[100];
+
+public:
 	Brain();
 	Brain(const Brain& src);
 	~Brain();
-
 	Brain& operator= (const Brain& src);
+
+	void	setIdea(int n, const std::string& thought);
+	std::string getIdea(int n) const;
 };

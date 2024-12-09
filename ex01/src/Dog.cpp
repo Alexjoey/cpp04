@@ -16,7 +16,7 @@ Dog::Dog(): _type("Dog"), _brain(new (Brain))
 {
 	Animal::_type = "Dog";
 	for (int i = 0; i < 100; i++)
-		this->_brain->ideas[i] = "Thoughts";
+		this->_brain->setIdea(i, "thoughts");
 	std::cout << "Dog default constructor called.\n";
 }
 
@@ -35,9 +35,8 @@ Dog::~Dog()
 Dog& Dog::operator= (const Dog& src)
 {
 	this->_type = src._type;
-	Brain	*pointer = new Brain(*src._brain);
 	delete this->_brain;
-	this->_brain = pointer;
+	this->_brain = new Brain(*src._brain);
 	std::cout << "Dog copy operator called.\n";
 	return (*this);
 }
@@ -50,4 +49,21 @@ void	Dog::makeSound() const
 std::string	Dog::getType() const
 {
 	return (this->_type);
+}
+
+std::string	Dog::getIdea(int n) const
+{
+	if (n < 100)
+		return (this->_brain->getIdea(n));
+	else
+		std::cout << "please input a number between 0 and 99.\n";
+	return (NULL);
+}
+
+void	Dog::setIdea(int n, std::string idea)
+{
+	if (n < 100)
+		this->_brain->setIdea(n, idea);
+	else
+		std::cout << "please input a number between 0 and 99.\n";
 }

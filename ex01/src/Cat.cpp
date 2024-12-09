@@ -16,7 +16,7 @@ Cat::Cat(): _type("Cat"), _brain(new (Brain))
 {
 	Animal::_type = "Cat";
 	for (int i = 0; i < 100; i++)
-		this->_brain->ideas[i] = "Thoughts";
+		this->_brain->setIdea(i, "Thoughts");
 	std::cout << "Cat default constructor called.\n";
 }
 
@@ -56,7 +56,7 @@ std::string	Cat::getType() const
 std::string	Cat::getIdea(int n) const
 {
 	if (n < 100)
-		return (this->_brain->ideas[n]);
+		return (this->_brain->getIdea(n));
 	else
 		std::cout << "please input a number between 0 and 99.\n";
 	return (NULL);
@@ -65,7 +65,7 @@ std::string	Cat::getIdea(int n) const
 void	Cat::setIdea(int n, std::string idea)
 {
 	if (n < 100)
-		this->_brain->ideas[n] = idea;
+		this->_brain->setIdea(n, idea);
 	else
 		std::cout << "please input a number between 0 and 99.\n";
 }
