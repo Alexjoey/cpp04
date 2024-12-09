@@ -6,18 +6,21 @@
 /*   By: amylle <alexm@live.be>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:18:49 by amylle            #+#    #+#             */
-/*   Updated: 2024/12/02 14:19:27 by amylle           ###   ########.fr       */
+/*   Updated: 2024/12/02 15:25:08 by amylle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Dog: public Animal
+class Dog: public AAnimal
 {
-protected:
+
+private:
 	std::string	_type;	
+	Brain	*_brain;
 
 public:
 	Dog();
@@ -26,5 +29,8 @@ public:
 
 	Dog& operator= (const Dog& src);
 	void	makeSound() const;
+
 	std::string	getType() const;
+	std::string	getIdea(int n) const;
+	void	setIdea(int n, std::string idea);
 };

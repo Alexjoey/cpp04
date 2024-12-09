@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amylle <alexm@live.be>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:07:02 by amylle            #+#    #+#             */
-/*   Updated: 2024/12/02 14:17:09 by amylle           ###   ########.fr       */
+/*   Created: 2024/12/02 14:43:02 by amylle            #+#    #+#             */
+/*   Updated: 2024/12/02 14:46:26 by amylle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-
-class Cat: public AAnimal
+class	Brain
 {
-private:
-	std::string	_type;
-	Brain		*_brain;
+
+protected:
+	std::string	ideas[100];
 
 public:
-	Cat();
-	Cat(const Cat& src);
-	~Cat();
+	Brain();
+	Brain(const Brain& src);
+	~Brain();
+	Brain& operator= (const Brain& src);
 
-	Cat& operator= (const Cat& src);
-	void	makeSound() const;
-	std::string	getType() const;
-	std::string	getIdea(int n) const;
-	void		setIdea(int n, std::string idea);
-
+	void	setIdea(int n, const std::string& thought);
+	std::string getIdea(int n) const;
 };
