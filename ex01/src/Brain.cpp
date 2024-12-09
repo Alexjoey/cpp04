@@ -32,8 +32,8 @@ Brain::~Brain()
 Brain& Brain::operator= (const Brain& src)
 {
 	int	i = -1;
-	while(!src.ideas[++i].empty())
+	while(++i < 100)
 		this->ideas[i] = src.ideas[i];
-	return (*this);
 	std::cout << "Brain copy operator called.\n";
+	return (*this);
 }
