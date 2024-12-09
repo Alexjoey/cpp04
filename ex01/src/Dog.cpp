@@ -15,6 +15,8 @@
 Dog::Dog(): _type("Dog"), _brain(new (Brain))
 {
 	Animal::_type = "Dog";
+	for (int i = 0; i < 100; i++)
+		this->_brain->ideas[i] = "Thoughts";
 	std::cout << "Dog default constructor called.\n";
 }
 
@@ -33,10 +35,10 @@ Dog::~Dog()
 Dog& Dog::operator= (const Dog& src)
 {
 	this->_type = src._type;
-	std::cout << "Dog copy operator called.\n";
 	Brain	*pointer = new Brain(*src._brain);
 	delete this->_brain;
 	this->_brain = pointer;
+	std::cout << "Dog copy operator called.\n";
 	return (*this);
 }
 

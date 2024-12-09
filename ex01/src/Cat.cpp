@@ -15,6 +15,8 @@
 Cat::Cat(): _type("Cat"), _brain(new (Brain))
 {
 	Animal::_type = "Cat";
+	for (int i = 0; i < 100; i++)
+		this->_brain->ideas[i] = "Thoughts";
 	std::cout << "Cat default constructor called.\n";
 }
 
@@ -34,9 +36,8 @@ Cat::~Cat()
 Cat& Cat::operator= (const Cat& src)
 {
 	this->_type = src._type;
-	Brain	*pointer = new Brain(*src._brain);
 	delete this->_brain;
-	this->_brain = pointer;
+	this->_brain = new Brain(*src._brain);
 	std::cout << "Cat copy operator called.\n";
 	return (*this);
 }
@@ -49,4 +50,22 @@ void	Cat::makeSound() const
 std::string	Cat::getType() const
 {
 	return (this->_type);
+}
+
+
+std::string	Cat::getIdea(int n) const
+{
+	if (n < 100)
+		return (this->_brain->ideas[n]);
+	else
+		std::cout << "please input a number between 0 and 99.\n";
+	return (NULL);
+}
+
+void	Cat::setIdea(int n, std::string idea)
+{
+	if (n < 100)
+		this->_brain->ideas[n] = idea;
+	else
+		std::cout << "please input a number between 0 and 99.\n";
 }

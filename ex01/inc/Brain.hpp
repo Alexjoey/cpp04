@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class	Brain
 {
-protected:
-	std::string	ideas[100];
-
 public:
+	std::string	ideas[100];
 	Brain();
 	Brain(const Brain& src);
 	~Brain();
