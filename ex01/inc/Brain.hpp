@@ -15,10 +15,6 @@
 
 class	Brain
 {
-
-protected:
-	std::string	ideas[100];
-
 public:
 	Brain();
 	Brain(const Brain& src);
@@ -27,4 +23,7 @@ public:
 
 	void	setIdea(int n, const std::string& thought);
 	std::string getIdea(int n) const;
+
+private:
+	std::string	ideas[100];
 };
