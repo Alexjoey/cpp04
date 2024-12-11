@@ -12,7 +12,7 @@
 
 #include "../inc/Animal.hpp"
 
-Animal::Animal()
+Animal::Animal(): _type("default")
 {
 	std::cout << "Animal default constructor called.\n";
 }

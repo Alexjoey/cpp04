@@ -12,7 +12,7 @@
 
 #include "../inc/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal(): _type("WrongDefault")
 {
 	std::cout << "WrongAnimal default constructor called.\n";
 }
