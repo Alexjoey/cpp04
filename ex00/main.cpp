@@ -28,9 +28,9 @@ j->makeSound();
 std::cout << meta->getType() << ": ";
 meta->makeSound();
 
-delete meta;
-delete j;
 delete i;
+delete j;
+delete meta;
 
 const WrongAnimal* wrongMeta = new WrongAnimal();
 const WrongAnimal* wrongJ = new WrongCat();
@@ -40,9 +40,11 @@ wrongJ->makeSound();
 std::cout << wrongMeta->getType() << ": ";
 wrongMeta->makeSound();
 
-
 delete wrongJ;
 delete wrongMeta;
+
+WrongCat ben;
+ben.makeSound();
 
 return 0;
 }
