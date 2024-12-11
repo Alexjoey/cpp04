@@ -43,6 +43,7 @@ int	main(void)
 	std::cout << "ben's idea[1] is: " << ben.getIdea(1) << ".\n";
 	std::cout << "yom's idea[1] is: " << yom.getIdea(1) << ".\n";
 	yom.setIdea(1, "hohoho");
+	std::cout << "yoms idea[1] is set to 'hohoho'.\n";
 	std::cout << "ben's idea[1] is: " << ben.getIdea(1) << ".\n";
 	std::cout << "yom's idea[1] is: " << yom.getIdea(1) << ".\n";
 	std::cout << "\ndog deep/shallow copy test:\n";
@@ -53,6 +54,7 @@ int	main(void)
 	std::cout << "ven's idea[1] is: " << ven.getIdea(1) << ".\n";
 	std::cout << "tom's idea[1] is: " << tom.getIdea(1) << ".\n";
 	tom.setIdea(1, "hohoho");
+	std::cout << "toms idea[1] is set to 'hohoho'.\n";
 	std::cout << "ven's idea[1] is: " << ven.getIdea(1) << ".\n";
 	std::cout << "tom's idea[1] is: " << tom.getIdea(1) << ".\n";
 }
